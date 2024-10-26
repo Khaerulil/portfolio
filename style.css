@@ -1,0 +1,121 @@
+:root {
+    --text-color-before:rgba(0, 231, 249,0.4);
+    --text-color:rgb(0, 231, 249);
+    --bg-color:rgb(11, 4, 31);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+
+}
+body.active * {
+    color: var(--bg-color);
+    background-color: var(--text-color);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 10%;
+    display: flex;
+    background: transparent;
+    justify-content: space-between;
+    border-bottom: 1px transparent var(--text-color) ;
+    box-shadow: 0px 2px 20px rgba(0, 231, 249,0.7);
+    z-index: 100;
+}
+.header.active {
+    border-bottom: 1px transparent var(--bg-color);
+    box-shadow: 0px 2px 20px var(--bg-color);
+}
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+.navbar {
+    display: flex;
+    margin: auto 1rem;
+}
+.navbar a {
+    font-size: 1em; 
+    font-weight: 500;
+    margin: auto 1.8rem;
+    border-radius: 2px;
+}
+.navbar a::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid var(--text-color-before);
+    border-radius: 10px;
+    transform: scaleX(0);
+}
+.navbar a.active::after {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.navbar a:hover {
+    background: linear-gradient(45deg, var(--text-color-before), var(--text-color));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.navbar a.active:hover {
+    background: linear-gradient(45deg, var(--bg-color), black);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.navbar a.active:hover::after {
+    
+    border-bottom: 2px solid var(--bg-color);
+}
+.navbar a:hover::after {
+    transform: scaleX(0.8);
+    transition: 0.4s;
+}
+#mode {
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+.home {
+    height: 100vh;
+    width: 100%;
+    padding: 10%;
+
+}
+.home-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+p {
+    font-weight: 400;
+    font-size: 1em;
+}
